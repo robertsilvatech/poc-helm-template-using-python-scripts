@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app
+  name: {% raw %}{{ .Chart.Name }}{% endraw %}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mytest
+  template:
+    metadata:
+      labels:
+        app: mytest
+    spec:
+      containers:
+      - image: robertsilvatech/flask-color
+        name: flask-color
+        envFrom: 
+        {% raw %}{{- if (hasKey .Values "configGlobal") }}{% endraw %}
+        {% raw %}{{- if and (hasKey .Values.configGlobal "enabled") .Values.configGlobal.enabled }}{% endraw %}
+        - configMapRef:
+          name: my-config-global
+        {% raw %}{{- end }}{% endraw %}         
+        {% raw %}{{- end }}{% endraw %}
