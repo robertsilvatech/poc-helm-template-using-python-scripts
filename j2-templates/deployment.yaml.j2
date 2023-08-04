@@ -18,8 +18,8 @@ spec:
       - image: robertsilvatech/flask-color
         name: flask-color
         envFrom: 
-        {% raw %} {{- if (hasKey .Values "configGlobal") }} {% endraw %}
-        {% raw %} {{- if and (hasKey .Values.configGlobal "enabled") .Values.configGlobal.enabled {% endraw %}
+        {% raw %}{{- if (hasKey .Values "configGlobal") }}{% endraw %}
+        {% raw %}{{- if and (hasKey .Values.configGlobal "enabled") .Values.configGlobal.enabled{% endraw %}
         - configMapRef:
           name: my-config-global
 
