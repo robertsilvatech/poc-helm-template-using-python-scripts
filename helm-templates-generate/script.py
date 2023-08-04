@@ -11,5 +11,5 @@ env = Environment(loader=file_load)
 template = env.get_template('deployment.yaml.j2')
 output = template.render()
 print(output)
-with open('helm-templates/deployment.yaml', 'w') as file:
+with open('output-templates/deployment.yaml', 'w') as file:
     file.write(output)
