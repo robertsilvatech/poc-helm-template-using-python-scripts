@@ -9,7 +9,7 @@ from yaml.loader import SafeLoader
 file_load = FileSystemLoader('j2-templates/')
 env = Environment(loader=file_load)
 template = env.get_template('deployment.yaml.j2')
-print(template)
 output = template.render()
 print(output)
-
+with open('helm-templates/deployment.yaml', 'w') as file:
+    file.write(output)
