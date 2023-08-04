@@ -160,5 +160,6 @@ cython_debug/
 #.idea/
 
 # MyProject
-**/*templates/*yaml
-**/*templates/*yml
+**/output-templates/*yaml
+**/helm-templates/*yaml
+**/templates/*yaml
