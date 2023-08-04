@@ -1,3 +1,4 @@
+{% raw %}{{- if objects.deployment.enabled }}{% endraw %}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -24,3 +25,4 @@ spec:
           name: my-config-global
         {% raw %}{{- end }}{% endraw %}         
         {% raw %}{{- end }}{% endraw %}
+{% raw %}{{- end }}{% endraw %}
