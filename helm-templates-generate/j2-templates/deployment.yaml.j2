@@ -1,9 +1,9 @@
-{% raw %}{{- if objects.deployment.enabled }}{% endraw %}
+{% raw %}{{- if .Values.objects.deployment.enabled }}{% endraw %}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app
+    run: app
   name: {% raw %}{{ .Chart.Name }}{% endraw %}
 spec:
   replicas: 1

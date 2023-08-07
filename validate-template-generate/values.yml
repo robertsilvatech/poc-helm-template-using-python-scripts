@@ -1,0 +1,3 @@
+objects:
+  deployment:
+    enabled: true
